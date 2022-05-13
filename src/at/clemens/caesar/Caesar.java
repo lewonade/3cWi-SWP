@@ -8,8 +8,8 @@ import java.util.Scanner;
 public class Caesar {
 
     public static void main(String[] args) {
+
         try (Scanner scanner = new Scanner(System.in)) {
-            System.out.println("Gib den zu verschlüsselden Text ein:");
 
             String text = scanner.nextLine();
 
@@ -17,8 +17,10 @@ public class Caesar {
 
             char[] inputArray = text.toCharArray();
             char[] EncryptedArray = encrypt(offset, inputArray);
+            char[] DecryptedArray = decrypt(offset, inputArray);
 
             System.out.println(EncryptedArray);
+            System.out.println(DecryptedArray);
         }
     }
 
@@ -27,7 +29,7 @@ public class Caesar {
 
         for (int i = 0; i < inputArray.length; i++) {
 
-            int offsetting = (inputArray[i] + offset) % 128;
+            int offsetting = (inputArray[i] + offset);
 
             EncryptedArray[i] = (char) (offsetting);
 
@@ -35,4 +37,16 @@ public class Caesar {
         return EncryptedArray;
     }
 
+    public static char[] decrypt(int offset, char[] inputArray) {
+        char[] DecryptedArray = new char[inputArray.length];
+        int offsetting;
+        for (int i = 0; i < inputArray.length; i++) {
+
+            offsetting = (inputArray[i] - offset);
+
+            DecryptedArray[i] = (char) (offsetting);
+
+        }
+        return DecryptedArray;
+    }
 }
