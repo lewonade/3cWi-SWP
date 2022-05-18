@@ -42,16 +42,7 @@ public class Caesar {
                 break;
             }
         }
-        // String text = scanner.nextLine();
 
-        // int offset = 2;
-
-        // char[] inputArray = text.toCharArray();
-        // char[] EncryptedArray = encrypt(offset, inputArray);
-        // char[] DecryptedArray = decrypt(offset, inputArray);
-
-        // System.out.println(EncryptedArray);
-        // System.out.println(DecryptedArray);
     }
 
     public static char[] encrypt(int offset, char[] inputArray) {
