@@ -8,20 +8,50 @@ import java.util.Scanner;
 public class Caesar {
 
     public static void main(String[] args) {
+        while (true) {
 
-        try (Scanner scanner = new Scanner(System.in)) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("1 für Encrypten");
+            System.out.println("2 für Decrypten");
+            System.out.println("3 für Beenden");
+            int input = scanner.nextInt();
 
-            String text = scanner.nextLine();
+            if (input == 1) {
+                System.out.println("Gib den zu Verschlüsselnden Text ein");
+                String text = scanner.next();
+                int offset = 2;
+                char[] inputArray = text.toCharArray();
+                char[] EncryptedArray = encrypt(offset, inputArray);
+                System.out.println("");
+                System.out.println(EncryptedArray);
+                System.out.println("");
+            }
 
-            int offset = 2;
+            if (input == 2) {
+                System.out.println("Gib den zu Entschlüsselnden Text ein");
+                String text = scanner.next();
+                int offset = -2;
+                char[] inputArray = text.toCharArray();
+                char[] DecryptedArray = encrypt(offset, inputArray);
+                System.out.println("");
+                System.out.println(DecryptedArray);
+                System.out.println("");
+            }
 
-            char[] inputArray = text.toCharArray();
-            char[] EncryptedArray = encrypt(offset, inputArray);
-            char[] DecryptedArray = decrypt(offset, inputArray);
-
-            System.out.println(EncryptedArray);
-            System.out.println(DecryptedArray);
+            if (input == 3) {
+                break;
+            }
         }
+        // String text = scanner.nextLine();
+
+        // int offset = 2;
+
+        // char[] inputArray = text.toCharArray();
+        // char[] EncryptedArray = encrypt(offset, inputArray);
+        // char[] DecryptedArray = decrypt(offset, inputArray);
+
+        // System.out.println(EncryptedArray);
+        // System.out.println(DecryptedArray);
     }
 
     public static char[] encrypt(int offset, char[] inputArray) {
