@@ -6,8 +6,9 @@ public class washingmachine {
     public static void main(String[] args) {
         try (Scanner scanner = new Scanner(System.in)) {
 
-            boolean a = false;
-            String c = "";
+            boolean detergent = false;
+            int speed = 0;
+            String mode = "";
 
             while (true) {
                 System.out.println("");
@@ -15,10 +16,6 @@ public class washingmachine {
                 System.out.println("Um Waschmittel nachzufüllen drücken sie '2'");
                 System.out.println("");
                 int input = scanner.nextInt();
-
-                boolean detergent = a;
-                int speed = 0;
-                String mode = c;
 
                 if (input == 1) {
                     System.out.println("");
@@ -42,6 +39,7 @@ public class washingmachine {
                         System.out.println((""));
                         System.out.println("Sie haben nicht genug Waschmittel, füllen sie es nach!");
                         System.out.println("");
+                        speed = 0;
 
                     }
                     if (input2 == 2) {
@@ -56,6 +54,7 @@ public class washingmachine {
                         System.out.println((""));
                         System.out.println("Sie haben nicht genug Waschmittel, füllen sie es nach!");
                         System.out.println("");
+                        speed = 0;
                     }
                     if (input2 == 3) {
                         speed += 120;
@@ -69,11 +68,12 @@ public class washingmachine {
                         System.out.println((""));
                         System.out.println("Sie haben nicht genug Waschmittel, füllen sie es nach!");
                         System.out.println("");
+                        speed = 0;
                     }
 
                 }
                 if (input == 2) {
-                    a = true;
+                    detergent = true;
                 }
 
             }
